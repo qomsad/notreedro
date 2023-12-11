@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "214312717364",
+    "project_id": "notreedro",
+    "storage_bucket": "notreedro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214312717364:android:30da2d270f194db4b00e61",
+        "android_client_info": {
+          "package_name": "com.firebaseapp.notreedro"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3i7RTUM_bbyjEs6aqrkWpvxSQsiSM_GU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
