@@ -19,4 +19,7 @@
         то на неё поступит письмо со ссылкой для сброса пароля
     </string>
     <string name="auth_forgot_password_header">Сброс пароля</string>
+    <string name="new_note">Новая заметка</string>
+    <string name="bottom_nav_notes">Заметки</string>
+    <string name="bottom_nav_settings">Настройки</string>
 </resources>

@@ -35,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         TextView authForgotPasswordButton = findViewById(R.id.authForgotPasswordButton);
         authForgotPasswordButton.setOnClickListener(view -> goToNextActivity(ForgotPasswordActivity.class));
 
+        Button authSkipButton = findViewById(R.id.authSkipButton);
+        authSkipButton.setOnClickListener(view -> setContentView(R.layout.note_list_page));
+
+
         loginButton = findViewById(R.id.authLoginButton);
         emailInput = findViewById(R.id.authLoginInput);
         passwordInput = findViewById(R.id.authPasswordInput);
