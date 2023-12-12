@@ -11,4 +11,12 @@
         Авторизация позволяет сохранять ваши заметки
         в облаке и синхронизировать их между устройствами.
     </string>
+    <string name="auth_register_header">Регистрация</string>
+    <string name="auth_register_password_confirm">Подтверждение пароля</string>
+    <string name="auth_forgot_password_button">Отправить</string>
+    <string name="auth_forgot_password_text">
+        Если есть пользователь с введённым email,
+        то на неё поступит письмо со ссылкой для сброса пароля
+    </string>
+    <string name="auth_forgot_password_header">Сброс пароля</string>
 </resources>

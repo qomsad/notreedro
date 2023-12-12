@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context=".RegisterActivity">
 
     <TextView
-        android:id="@+id/authWelcomeText"
+        android:id="@+id/authRegisterText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="200dp"
-        android:text="@string/auth_welcome_text"
+        android:text="@string/auth_register_header"
         android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/guidelineCenterVertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/authLoginInputLayout"
+        android:id="@+id/authRegisterLoginInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@+id/guidelineCenterVertical">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/authLoginInput"
+            android:id="@+id/authRegisterLoginInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/auth_login_input"
@@ -38,7 +38,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/authPasswordInputLayout"
+        android:id="@+id/authRegisterPasswordFirstInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -46,76 +46,43 @@
         android:layout_marginBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/authLoginInputLayout">
+        app:layout_constraintTop_toBottomOf="@+id/authRegisterLoginInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/authPasswordInput"
+            android:id="@+id/authRegisterPasswordFirstInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/auth_password_input"
             android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <LinearLayout
-        android:id="@+id/authSetButtonsLayout"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/authRegisterPasswordSecondInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="@+id/authPasswordInputLayout"
-        app:layout_constraintStart_toStartOf="@+id/authPasswordInputLayout"
-        app:layout_constraintTop_toBottomOf="@+id/authPasswordInputLayout">
-
-        <TextView
-            android:id="@+id/authForgotPasswordButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="start"
-            android:textColor="@color/secondary"
-            android:text="@string/auth_forgot_button" />
-
-        <TextView
-            android:id="@+id/authRegisterButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="end"
-            android:textColor="@color/secondary"
-            android:text="@string/auth_register_button" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/authInfoText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="16dp"
-        android:text="@string/auth_info_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/authSetButtonsLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/authRegisterPasswordFirstInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/authRegisterPasswordSecondInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/auth_register_password_confirm"
+            android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/authLoginButton"
+        android:id="@+id/authRegisterButton"
         style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/auth_login_button"
-        app:layout_constraintBottom_toTopOf="@+id/authSkipButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/authSkipButton"
-        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/auth_skip_button"
+        android:text="@string/auth_register_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
