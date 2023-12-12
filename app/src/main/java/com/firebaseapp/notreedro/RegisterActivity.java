@@ -9,6 +9,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.firebaseapp.notreedro.utils.EmailValidator;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -49,12 +52,9 @@ public class RegisterActivity extends AppCompatActivity {
             if (passwordS.isEmpty()) {
                 passwordSecondInput.setError("Поле подтверждение пароля не заполнено");
             }
-        } else if (!EmailValidator.isValidEmail(email) || passwordF.length() < 8 || !passwordF.equals(passwordS)) {
+        } else if (!EmailValidator.isValidEmail(email) || !passwordF.equals(passwordS)) {
             if (!EmailValidator.isValidEmail(email)) {
                 emailInput.setError("Email не валидный");
-            }
-            if (passwordF.length() < 8) {
-                passwordFirstInput.setError("Пароль должен содержать 8 символов");
             }
             if (!passwordF.equals(passwordS)) {
                 passwordSecondInput.setError("Пароли не совпадают");
@@ -69,11 +69,25 @@ public class RegisterActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
 
                         } else {
-                            Toast.makeText(RegisterActivity.this,
-                                    "Ошибка регистрации: " + task.getException().getMessage(),
-                                    Toast.LENGTH_SHORT).show();
+                            try {
+                                throw task.getException();
+                            } catch (FirebaseAuthWeakPasswordException e) {
+                                emailInput.setError("Email не валидный");
+                                emailInput.requestFocus();
+                            } catch (FirebaseAuthInvalidCredentialsException e) {
+                                passwordFirstInput.setError("Пароль слишком простой");
+                                passwordFirstInput.requestFocus();
+                            } catch (FirebaseAuthUserCollisionException e) {
+                                emailInput.setError("Пользователь с таким email уже существует");
+                                emailInput.requestFocus();
+                            } catch (Exception e) {
+                                Toast.makeText(RegisterActivity.this,
+                                        "Неизвестная ошибка: " + e.getMessage(),
+                                        Toast.LENGTH_SHORT).show();
+                            }
                         }
                     });
         }
     }
 }
+
