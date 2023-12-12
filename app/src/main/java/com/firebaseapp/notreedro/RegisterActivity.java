@@ -72,11 +72,11 @@ public class RegisterActivity extends AppCompatActivity {
                             try {
                                 throw task.getException();
                             } catch (FirebaseAuthWeakPasswordException e) {
-                                emailInput.setError("Email не валидный");
-                                emailInput.requestFocus();
-                            } catch (FirebaseAuthInvalidCredentialsException e) {
                                 passwordFirstInput.setError("Пароль слишком простой");
                                 passwordFirstInput.requestFocus();
+                            } catch (FirebaseAuthInvalidCredentialsException e) {
+                                emailInput.setError("Email не валидный");
+                                emailInput.requestFocus();
                             } catch (FirebaseAuthUserCollisionException e) {
                                 emailInput.setError("Пользователь с таким email уже существует");
                                 emailInput.requestFocus();
